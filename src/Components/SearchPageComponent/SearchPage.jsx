@@ -1,29 +1,21 @@
 import React, { useState } from 'react'
 import TextField from '@material-ui/core/TextField';
-import { useNavigate } from "react-router-dom"
+import { useNavigate, createSearchParams } from "react-router-dom"
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import background from "../../Utilities/Images/SearchBg.jpg";
 import Navbar from '../NavbarComponent/navbar';
 import './SearchPage.css';
 
 const SearchPage = () => {
-
     const navigate = useNavigate();
-    const [myOptions, setMyOptions] = useState([])
-    const [nav, setNav] = useState(0)
-    const getDataFromAPI = () => {
-        setNav(nav + 1)
-        fetch("https://api.randomuser.me/?nat=US&results=5").then((response) => {
-            return response.json()
-        }).then((res) => {
-            for (var i = 0; i < res.results.length; i++) {
-                myOptions.push(res.results[i].email)
-            }
-            setMyOptions(myOptions)
+    const [showTrending, setShowTrending] = useState(true);
+    const myOptions = ['Reliance', 'Tata Motors', 'Indalco', 'HDFC', 'Dalmia', 'ICICI', 'IBM', 'Sun Pharma'];
+    const getDataFromAPI = (e) => {
+        setShowTrending(false);
+        navigate({
+            pathname: '/Dashboard',
         })
-        if (nav > 1) {
-            navigate('/Dashboard');
-        }
+
     }
     return (
         <div>
@@ -35,54 +27,58 @@ const SearchPage = () => {
                     <Autocomplete
                         style={{ width: 500 }}
                         freeSolo
+                        onChange={(e) => getDataFromAPI(e)}
                         autoComplete
                         autoHighlight
                         options={myOptions}
                         renderInput={(params) => (
                             <>
                                 <TextField {...params}
-                                    onChange={getDataFromAPI}
                                     variant="outlined"
+                                    onChange={(e) => { setShowTrending(false); }}
                                     label="Please type atleast 3 characters"
                                 />
                                 <br />
                                 <br />
                                 <br />
-                                <div className="todaysDetails">
-                                    <div className='moneyCard'>
-                                        <div className='moneyCardContents' style={{ justifyContent: 'space-between' }}>
-                                            <div className='moneyCardPriceData'>
-                                                <img
-                                                    className='litIcon'
-                                                    src='https://moritzfirelab.files.wordpress.com/2018/10/flame.png'
-                                                    alt='todaysHigh'
-                                                    width="22"
-                                                    height="22"
-                                                />
-                                            </div>
-                                            <div className='moneyCardPriceData' style={{ color: 'green' }}>
-                                                Reliance
-                                                <h4 className='moneyCardPrice'>&#x20b9;345.34</h4>
-                                            </div>
-                                            <div className='moneyCardPriceData' style={{ color: 'green', marginLeft: '30px' }}>
-                                                HDFC
-                                                <h4 className='moneyCardPrice'>&#x20b9;154.22</h4>
-                                            </div>
-                                            <div className='moneyCardPriceData' style={{ color: 'red', marginLeft: '30px' }}>
-                                                Tata Motors
-                                                <h4 className='moneyCardPrice'>&#x20b9;700.54</h4>
-                                            </div>
-                                            <div className='moneyCardPriceData' style={{ color: 'green', marginLeft: '30px' }}>
-                                                Dalmia
-                                                <h4 className='moneyCardPrice'>&#x20b9;109.22</h4>
-                                            </div>
-                                            <div className='moneyCardPriceData' style={{ color: 'red', marginLeft: '30px' }}>
-                                                Indalco
-                                                <h4 className='moneyCardPrice'>&#x20b9;88.34</h4>
+                                {showTrending && (
+                                    <div className="todaysDetails">
+                                        <div className='moneyCard'>
+                                            <div className='moneyCardContents' style={{ justifyContent: 'space-between' }}>
+                                                <div className='moneyCardPriceData'>
+                                                    <img
+                                                        className='litIcon'
+                                                        src='https://moritzfirelab.files.wordpress.com/2018/10/flame.png'
+                                                        alt='todaysHigh'
+                                                        width="22"
+                                                        height="22"
+                                                    />
+                                                </div>
+                                                <div className='moneyCardPriceData' style={{ color: 'green' }}>
+                                                    Reliance
+                                                    <h4 className='moneyCardPrice'>&#x20b9;345.34</h4>
+                                                </div>
+                                                <div className='moneyCardPriceData' style={{ color: 'green', marginLeft: '30px' }}>
+                                                    HDFC
+                                                    <h4 className='moneyCardPrice'>&#x20b9;154.22</h4>
+                                                </div>
+                                                <div className='moneyCardPriceData' style={{ color: 'red', marginLeft: '30px' }}>
+                                                    Tata Motors
+                                                    <h4 className='moneyCardPrice'>&#x20b9;700.54</h4>
+                                                </div>
+                                                <div className='moneyCardPriceData' style={{ color: 'green', marginLeft: '30px' }}>
+                                                    Dalmia
+                                                    <h4 className='moneyCardPrice'>&#x20b9;109.22</h4>
+                                                </div>
+                                                <div className='moneyCardPriceData' style={{ color: 'red', marginLeft: '30px' }}>
+                                                    Indalco
+                                                    <h4 className='moneyCardPrice'>&#x20b9;88.34</h4>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                )}
+
                             </>
 
                         )}
