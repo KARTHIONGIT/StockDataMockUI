@@ -2,7 +2,7 @@
   "name": "logintest",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://KARTHIONGIT.github.io",
+  "homepage": "https://KARTHIONGIT.github.io",  "http://KARTHIONGIT.github.io/StockDataMockUI",
   "dependencies": {
     "@material-ui/core": "^4.12.4",
     "@material-ui/lab": "^4.0.0-alpha.61",
