@@ -1,0 +1,27 @@
+.swot {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background-color: white;
+    height: 220px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    padding: 18px;
+}
+.swotCard {
+    width: 180px;
+    margin: 0 10px;
+    background-color: lightcyan;
+}
+.swotCardData {
+    margin: 15px;
+}
+.swotDescription {
+    font-size: smaller;
+}
+.swotRatingScore {
+    background-color: white;
+    width: 50px;
+    margin-left: 7px;
+    border-radius: 100px;
+}

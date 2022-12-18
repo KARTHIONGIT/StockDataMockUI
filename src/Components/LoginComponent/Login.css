@@ -1,0 +1,35 @@
+.LoginContainer{
+  display: flex;
+  background-color: white !important;
+}
+.loginBgImage{
+  margin-top: -30px;
+}
+.kaniniImage{
+  margin-left: 80px;
+}
+.loginImageContent{
+  position: absolute;
+  top:17%;
+  left:12%;    
+}
+.loginTicker{
+  font-size: 28px;
+  font-weight: 300;
+}
+.loginImageContentText{
+  font-size: 20px;
+  font-weight: 100 !important;
+}
+.loginTextboxContainer{
+margin-left:100px;
+margin-top:180px;
+}
+.loginInput{
+  width: 400px;
+  height: 30px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  border: 1px solid rgb(204, 200, 200);
+  border-radius: 5px;
+}

@@ -1,0 +1,22 @@
+.essentials {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: white;
+    width: fit-content;
+    margin-bottom: 20px;
+    height: 460px;
+    padding: 27px;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+td,
+th {
+    text-align: left;
+    padding: 20px 30px;
+    font-size: small;
+}
+tr:nth-child(even) {
+    background-color: lightgray;
+}

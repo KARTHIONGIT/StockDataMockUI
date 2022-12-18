@@ -1,0 +1,8 @@
+
+.dashboardContents {
+    padding: 0 50px;
+}
+.swotStarEssentials {
+    display: flex;
+    justify-content: space-between;
+}

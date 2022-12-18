@@ -1,0 +1,34 @@
+.todaysDetails {
+    /* padding: 25px; */
+    display: flex;
+    justify-content: space-between;
+}
+.moneyCard {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background-color: white;
+    transition: 0.3s;
+    margin-bottom: 20px;
+    padding: 0 40px;
+    height: 90px;
+}
+.moneyCard:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.moneyCardContents {
+    display: flex;
+}
+.rotate {
+    font-size: 30px;
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+}
+.moneyCardStockIcons {
+    margin: 23px 40px;
+}
+.moneyCardPriceData {
+    margin-top: 15px;
+}
+.moneyCardPrice {
+    margin-top: 3px;
+}
