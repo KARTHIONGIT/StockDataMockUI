@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/StockDataMockUI/static/css/main.7bb6ef84.css",
+    "main.js": "/StockDataMockUI/static/js/main.ddef09e4.js",
+    "static/media/SearchBg.jpg": "/StockDataMockUI/static/media/SearchBg.d42e764b4493202b7cb0.jpg",
+    "index.html": "/StockDataMockUI/index.html",
+    "main.7bb6ef84.css.map": "/StockDataMockUI/static/css/main.7bb6ef84.css.map",
+    "main.ddef09e4.js.map": "/StockDataMockUI/static/js/main.ddef09e4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7bb6ef84.css",
+    "static/js/main.ddef09e4.js"
+  ]
+}
