@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 import TextField from '@material-ui/core/TextField';
 import { useNavigate } from "react-router-dom"
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import LogOut from '../LogoutComponent/LogOut';
 import background from "../../Utilities/Images/SearchBg.jpg";
 import Navbar from '../NavbarComponent/navbar';
+import './SearchPage.css';
 
 const SearchPage = () => {
 
     const navigate = useNavigate();
-    const [myOptions, setMyOptions] = useState(['Reliance', 'TataMotor', 'Bajaj ltd', 'HDFC'])
+    const [myOptions, setMyOptions] = useState([])
     const [nav, setNav] = useState(0)
     const getDataFromAPI = () => {
         setNav(nav + 1)
@@ -43,9 +43,46 @@ const SearchPage = () => {
                                 <TextField {...params}
                                     onChange={getDataFromAPI}
                                     variant="outlined"
-                                    label="Search Box"
+                                    label="Please type atleast 3 characters"
                                 />
-                                <p style={{color: 'grey'}}>Please type atleast 3 characters</p>
+                                <br />
+                                <br />
+                                <br />
+                                <div className="todaysDetails">
+                                    <div className='moneyCard'>
+                                        <div className='moneyCardContents' style={{ justifyContent: 'space-between' }}>
+                                            <div className='moneyCardPriceData'>
+                                                <img
+                                                    className='litIcon'
+                                                    src='https://moritzfirelab.files.wordpress.com/2018/10/flame.png'
+                                                    alt='todaysHigh'
+                                                    width="22"
+                                                    height="22"
+                                                />
+                                            </div>
+                                            <div className='moneyCardPriceData' style={{ color: 'green' }}>
+                                                Reliance
+                                                <h4 className='moneyCardPrice'>&#x20b9;345.34</h4>
+                                            </div>
+                                            <div className='moneyCardPriceData' style={{ color: 'green', marginLeft: '30px' }}>
+                                                HDFC
+                                                <h4 className='moneyCardPrice'>&#x20b9;154.22</h4>
+                                            </div>
+                                            <div className='moneyCardPriceData' style={{ color: 'red', marginLeft: '30px' }}>
+                                                Tata Motors
+                                                <h4 className='moneyCardPrice'>&#x20b9;700.54</h4>
+                                            </div>
+                                            <div className='moneyCardPriceData' style={{ color: 'green', marginLeft: '30px' }}>
+                                                Dalmia
+                                                <h4 className='moneyCardPrice'>&#x20b9;109.22</h4>
+                                            </div>
+                                            <div className='moneyCardPriceData' style={{ color: 'red', marginLeft: '30px' }}>
+                                                Indalco
+                                                <h4 className='moneyCardPrice'>&#x20b9;88.34</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </>
 
                         )}
